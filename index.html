@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FREECASH Codes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background: #e8f5e9;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            color: #2f3033;
+            padding-top: 20px;
+        }
+
+        .page-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .reward-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 1rem;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 1px solid #66bb6a33;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 10px 30px #66bb6a1a, 0 1px 8px #66bb6a33, 0 4px 20px rgba(0, 0, 0, 0.08), 0 8px 40px rgba(0, 0, 0, 0.05);
+            animation: cardFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% { transform: translatey(0px); }
+            50% { transform: translatey(-10px); }
+        }
+
+        .app-logo-container {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #66bb6a1a;
+            position: relative;
+        }
+
+        .app-logo {
+            width: 150px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px #66bb6a4d);
+            animation: logoShine 3s infinite;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        @keyframes logoShine {
+            0% { filter: drop-shadow(0 4px 12px #66bb6a4d); }
+            50% { filter: drop-shadow(0 8px 20px #66bb6a80); }
+            100% { filter: drop-shadow(0 4px 12px #66bb6a4d); }
+        }
+
+        .cash-text {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-top: 0.5rem;
+            color: #040404;
+            text-shadow: 0 4px 20px #66bb6a4d;
+        }
+
+        .amount {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #66bb6a;
+            margin: 0rem 0 0rem 0;
+            text-shadow: 0 4px 20px #66bb6a4d;
+            animation: amountPulse 2s infinite;
+        }
+
+        @keyframes amountPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .amount-subtext {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #040404;
+            text-shadow: 0 2px 10px #66bb6a4d;
+        }
+
+        .instructions-container {
+            margin: 1rem auto;
+            padding: 1rem;
+            background: #66bb6a0d;
+            border-radius: 16px;
+            border: 1px solid #66bb6a1a;
+        }
+
+        .instruction-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: #2f3033;
+            font-weight: 600;
+        }
+
+        .number {
+            background: #66bb6a;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(102, 187, 106, 0.2);
+        }
+
+        .instruction-item span {
+            text-transform: capitalize;
+        }
+
+        .instruction-item-4 {
+            align-items: flex-start;
+        }
+
+        .instruction-text-4 {
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .instruction-text-4 div {
+            margin: 0;
+            padding: 0;
+        }
+
+        .instruction-item-3 {
+            align-items: flex-start;
+        }
+
+        .instruction-text-3 {
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .instruction-text-3 div:first-child {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .instruction-text-3 div:last-child {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .claim-button {
+            background: #66bb6a;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
+            margin: 1rem auto;
+            display: block;
+            box-shadow: 0 10px 30px #66bb6a4d, 0 5px 15px #66bb6a33;
+            transition: all 0.3s ease;
+        }
+
+        .claim-button:hover {
+            transform: translatey(-5px);
+            box-shadow: 0 15px 40px #66bb6a66, 0 8px 20px #66bb6a4d;
+        }
+
+        .trust-badge {
+            width: 100% !important;
+            height: auto !important;
+            margin-top: 0.5rem;
+            border-radius: 12px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            opacity: 1;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px #66bb6a33;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #2f3033;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border: 1px solid #66bb6a33;
+            transition: transform 0.3s ease;
+            max-width: 320px;
+            width: calc(100% - 2rem);
+        }
+
+        .notification.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .notification-icon {
+            width: 24px;
+            height: 24px;
+            background: #66bb6a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        .notification-content {
+            flex: 1;
+        }
+
+        .notification-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .notification-text {
+            color: #666;
+            font-size: 13px;
+        }
+
+        #nameAlert {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translatex(-50%) translatey(0);
+            background: rgba(255, 255, 255, 0.95);
+            color: #2f3033;
+            padding: 12px 20px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px #66bb6a33;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 1000;
+            width: calc(100% - 2rem);
+            max-width: 320px;
+            backdrop-filter: blur(10px);
+            margin: 0 auto;
+            border: 1px solid #66bb6a33;
+            animation: slideDown 0.3s ease-out;
+            display: none;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translatex(-50%) translatey(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translatex(-50%) translatey(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js" style="position:fixed;width:100%;height:100%;z-index:1"></div>
+    <div id="nameAlert">
+        <span style="font-size: 24px;">💵</span>
+        <div><span class="name">Olivia M.</span> claimed $750!</div>
+    </div>
+    <div class="page-container">
+        <div class="reward-card">
+            <div class="app-logo-container">
+                <img alt="Freecash" width="100" height="100" class="app-logo" src="asset/freecash.png">
+                <div class="cash-text">Freecash</div>
+            </div>
+            <div id="amount" class="amount">$100</div>
+            <div class="amount-subtext">Instantly sent to you</div>
+            <div class="instructions-container">
+                <div class="instruction-item">
+                    <span class="number">1</span>
+                    <span>Click the Button Below</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="number">2</span>
+                    <span>Join the Freecash platform</span>
+                </div>
+                <div class="instruction-item instruction-item-3">
+                    <span class="number">3</span>
+                    <span class="instruction-text-3">
+                        <div>Earn More by Testing Multiple</div>
+                        <div>Games</div>
+                    </span>
+                </div>
+                <div class="instruction-item instruction-item-4">
+                    <span class="number">4</span>
+                    <span class="instruction-text-4">
+                        <div>Pro tip: Make in-web purchases</div>
+                        <div>on the games to earn faster</div>
+                    </span>
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="claimButton" class="claim-button">Start Earning Now →</button>
+                <img alt="Trust Badge" class="trust-badge" src="asset/trus2.png">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#66bb6a' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#66bb6a',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Names for the name alert
+        const NAMES = [
+            'Ava R.', 'Ethan T.', 'Luna W.', 'Caleb R.', 'Aria K.',
+            'Julian P.', 'Piper S.', 'Gabriel L.', 'Sofia G.', 'Alexander T.',
+            'Mia M.', 'Logan D.', 'Isabella W.', 'Benjamin R.', 'Charlotte K.',
+            'Oliver P.', 'Abigail S.', 'Elijah L.', 'Emily G.', 'William T.',
+            'Harper M.', 'Lucas D.', 'Amelia W.', 'Mason R.', 'Evelyn K.',
+            'Liam P.', 'Hannah S.', 'Noah L.', 'Abigail G.', 'Ethan T.',
+            'Zoe M.', 'Jackson B.', 'Victoria L.', 'Daniel K.', 'Madison P.',
+            'Samuel R.', 'Grace H.', 'Henry W.', 'Scarlett F.', 'Sebastian M.',
+            'Chloe D.', 'Wyatt S.', 'Penelope R.', 'Owen L.', 'Layla K.',
+            'Nathan P.', 'Riley S.', 'Leo M.', 'Hazel G.', 'Isaac T.'
+        ];
+
+        // Notification system
+        const notifications = [
+            {
+                icon: '👥',
+                title: 'Active Viewers',
+                text: '12 people are viewing this offer right now'
+            },
+            {
+                icon: '🎉',
+                title: 'Recent Claims',
+                text: '3 people claimed their reward in the last 5 minutes'
+            },
+            {
+                icon: '📍',
+                title: 'Local Activity',
+                text: '5 people in your city just claimed rewards'
+            },
+            {
+                icon: '🔥',
+                title: 'Trending Now',
+                text: 'This offer is trending in your area'
+            },
+            {
+                icon: '⭐',
+                title: 'Popular Offer',
+                text: 'Popular offer - 45 people claimed today'
+            },
+            {
+                icon: '🌍',
+                title: 'Nearby Activity',
+                text: 'Trending in your area - 8 people nearby just claimed'
+            },
+            {
+                icon: '🎯',
+                title: 'Almost There',
+                text: "You're 2 steps away from claiming your reward"
+            },
+            {
+                icon: '⏳',
+                title: 'Limited Spots',
+                text: 'Only 3 spots left for today\'s rewards'
+            },
+            {
+                icon: '📊',
+                title: 'Reward Status',
+                text: 'Reward pool is 89% depleted'
+            },
+            {
+                icon: '⏰',
+                title: 'Time Sensitive',
+                text: 'Last chance to claim before cards run out'
+            }
+        ];
+
+        // Server-side tracking function with ttclid support
+        async function trackServerSideEvent(eventType, userData = null, properties = null) {
+            try {
+                // Get ttclid from URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const ttclid = urlParams.get('ttclid') || '';
+                
+                const response = await fetch('/track-tiktok-event.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        event_type: eventType,
+                        user_data: userData,
+                        properties: properties,
+                        page_url: window.location.href,
+                        referrer: document.referrer,
+                        ttclid: ttclid
+                    })
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    console.log(`✅ Server-side ${eventType} event tracked:`, result.event_id);
+                } else {
+                    console.error(`❌ Failed to track ${eventType} event:`, result.error);
+                }
+                
+                return result;
+            } catch (error) {
+                console.error(`❌ Error tracking ${eventType} event:`, error);
+                return { success: false, error: error.message };
+            }
+        }
+
+        // Enhanced handle click function with TikTok tracking
+        async function handleClick() {
+            console.log('🚀 Button clicked! Starting tracking...');
+            
+            // Client-side tracking (fallback/backup) with content_id
+            try {
+                ttq.track('AddToCart', {
+                    content_type: 'product',
+                    content_id: 'playful-app-100',
+                    value: 0.50,
+                    currency: 'USD'
+                });
+                ttq.track('Purchase', {
+                    content_type: 'product',
+                    content_id: 'playful-app-100',
+                    value: 0.50,
+                    currency: 'USD'
+                });
+                ttq.track('SubmitForm', {
+                    content_type: 'lead',
+                    content_id: 'playful-lead-form',
+                    value: 0.50,
+                    currency: 'USD'
+                });
+                console.log('✅ Client-side TikTok tracking fired with content_id');
+            } catch (e) {
+                console.warn('⚠️ Client-side TikTok tracking failed:', e);
+            }
+
+            // Server-side tracking (primary) - with content_id
+            try {
+                console.log('📡 Sending server-side events...');
+                await Promise.all([
+                    trackServerSideEvent('AddToCart', null, {
+                        content_id: 'playful-app-100',
+                        content_type: 'product',
+                        value: 0.50,
+                        currency: 'USD'
+                    }),
+                    trackServerSideEvent('Purchase', null, {
+                        content_id: 'playful-app-100',
+                        content_type: 'product',
+                        value: 0.50,
+                        currency: 'USD'
+                    }),
+                    trackServerSideEvent('SubmitForm', null, {
+                        content_id: 'playful-lead-form',
+                        content_type: 'lead',
+                        value: 0.50,
+                        currency: 'USD'
+                    })
+                ]);
+                console.log('✅ All server-side events sent successfully');
+            } catch (error) {
+                console.error('❌ Server-side tracking failed:', error);
+            }
+
+            // Small delay to ensure events are sent before redirect
+            setTimeout(() => {
+                console.log('🔄 Redirecting to offer page...');
+                window.location.href = 'https://track.reviewtester.com/click';
+            }, 500);
+        }
+
+        // Counter animation function
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const currentValue = Math.floor(progress * (end - start) + start);
+                element.textContent = `$${currentValue}`;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Create notification function
+        function createNotification() {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            
+            // Randomly decide between name notification and regular notification
+            const isNameNotification = Math.random() > 0.5;
+            
+            if (isNameNotification) {
+                // Name notification
+                const randomName = NAMES[Math.floor(Math.random() * NAMES.length)];
+                notification.innerHTML = `
+                    <div class="notification-icon">💵</div>
+                    <div class="notification-content">
+                        <div class="notification-title">Recent Claim</div>
+                        <div class="notification-text"><span class="name">${randomName}</span> claimed $51.08!</div>
+                    </div>
+                `;
+            } else {
+                // Regular notification
+                const randomNotification = notifications[Math.floor(Math.random() * notifications.length)];
+                notification.innerHTML = `
+                    <div class="notification-icon">${randomNotification.icon}</div>
+                    <div class="notification-content">
+                        <div class="notification-title">${randomNotification.title}</div>
+                        <div class="notification-text">${randomNotification.text}</div>
+                    </div>
+                `;
+            }
+            
+            document.body.appendChild(notification);
+            
+            // Trigger animation
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            // Remove notification after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 5000);
+        }
+
+        // Start notifications
+        function startNotifications() {
+            // Initial delay before first notification
+            setTimeout(() => {
+                createNotification();
+                // Show notifications every 8-12 seconds
+                setInterval(() => {
+                    createNotification();
+                }, Math.random() * 4000 + 8000);
+            }, 3000);
+        }
+
+        // Start count-up animation when page loads
+        window.addEventListener('load', function() {
+            const amountElement = document.getElementById('amount');
+            const amountText = amountElement.textContent;
+            const amountValue = parseInt(amountText.replace(/[^0-9]/g, ''));
+            animateValue(amountElement, 0, amountValue, 2000);
+            startNotifications();
+        });
+
+        // Claim button click handler
+        document.getElementById('claimButton').addEventListener('click', handleClick);
+
+        // Make all cards clickable
+        document.querySelectorAll('.card, .rewards-img').forEach(element => {
+            element.style.cursor = 'pointer';
+            element.addEventListener('click', handleClick);
+        });
+    </script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f6662f085a234a37befa4c50c278b5f4","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
